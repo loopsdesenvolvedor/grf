@@ -4,6 +4,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 
 import "./globals.css";
+import { Providers } from "./provider";
 
 const interSans = Inter({
   variable: "--font-inter-sans",
@@ -29,7 +30,7 @@ export default async function RootLayout({
     <html lang={locale}>
       <body className={`${interSans.variable} antialiased`}>
         <NextIntlClientProvider messages={messages}>
-          {children}
+          <Providers>{children}</Providers>
         </NextIntlClientProvider>
       </body>
     </html>
